@@ -28,7 +28,9 @@ function Update() {
             }
 
         })
-        .catch((e) => console.error(e));
+        .catch((e) => {
+            alert('Try Viewing The Site In Incognito Mode')
+        });
 }
 
 Update();
