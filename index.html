@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Covid Tracker</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid p-5" style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356)) , url(https://source.unsplash.com/collection/9698689/1280x720)">
+      <div class="row">
+        <div
+          class="col-2 mx-auto"
+          style="display: flex; justify-content: center"
+        >
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player
+            src="https://assets7.lottiefiles.com/packages/lf20_nKCnOy.json"
+            background="transparent"
+            speed="1"
+            style="width: 100px; height: 100px"
+            loop=""
+            autoplay=""
+          ></lottie-player>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <h1
+            class="text-center text-bold text-white"
+            style="font-weight: 700; font-family: 'Montserrat', sans-serif"
+          >
+            Daily Covid Tracker
+          </h1>
+        </div>
+      </div>
+      <div
+        class="row my-5 p-5 shadow"
+        style="border-radius: 10px; background-color: #ffffffd8"
+      >
+        <div class="col-md-3">
+          <div class="image">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player
+              src="https://assets4.lottiefiles.com/private_files/lf30_1KyL2Q.json"
+              background="transparent"
+              speed="1"
+              style="width: 100px; height: 100px"
+              loop=""
+              autoplay=""
+            ></lottie-player>
+          </div>
+          <div class="content">
+            <h4 class="text-left"  style="font-weight: 700; font-family: 'Montserrat', sans-serif">Total Cases</h4>
+            <h5 id="cases"><div class="spinner-grow spinner-grow-sm text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div> 
+              Loading...</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="image">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player
+              src="https://assets7.lottiefiles.com/packages/lf20_W5Sk67.json"
+              background="transparent"
+              speed="1"
+              style="width: 100px; height: 100px"
+              loop=""
+              autoplay=""
+            ></lottie-player>
+          </div>
+          <div class="content">
+            <h4 class="text-left" style="font-weight: 700; font-family: 'Montserrat', sans-serif">Recovered</h4>
+            <h5 id="cured"><div class="spinner-grow spinner-grow-sm text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div> Loading...</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="image">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player
+              src="https://assets7.lottiefiles.com/datafiles/LlLwUr5rEcq0dNp/data.json"
+              background="transparent"
+              speed="1"
+              style="width: 100px; height: 100px"
+              loop=""
+              autoplay=""
+            ></lottie-player>
+          </div>
+          <div class="content">
+            <h4 class="text-left" style="font-weight: 700; font-family: 'Montserrat', sans-serif">Casualities</h4>
+            <h5 id="deaths"><div class="spinner-grow spinner-grow-sm text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div> Loading...</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="image">
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <lottie-player
+                src="https://assets2.lottiefiles.com/private_files/lf30_1lysabyy.json"
+                background="transparent"
+                speed="1"
+                style="width: 100px; height: 100px"
+                loop=""
+                autoplay=""
+              ></lottie-player>
+            </div>
+            <div class="content">
+              <h4 class="text-left" style="font-weight: 700; font-family: 'Montserrat', sans-serif">Last Updated</h4>
+              <h5 id="active">Loading...</h5>
+              <button class="btn btn-outline-danger" type="button" id="update_btn">
+                <span class="spinner-border spinner-border-sm" id="loader" role="status" aria-hidden="true"></span>
+                Refresh
+              </button>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div
+      class="container-fluid"
+      style="
+        background-color: #3c40c6;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        height: 19px;
+      "
+    >
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <h6
+            class="text-center text-white"
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 200;
+              margin-bottom: 0px;
+            "
+          >
+            Made With ♥ By
+            <span
+              style="font-family: 'Montserrat', sans-serif; font-weight: 400"
+              ><a href="https://www.linkedin.com/in/utk2001/" style="text-decoration: none; color: white;">Utkarsh</a></span
+            >
+          </h6>
+        </div>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

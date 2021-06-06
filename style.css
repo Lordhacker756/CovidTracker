@@ -1,0 +1,6 @@
+#loader{
+    display: none;
+}
+.l-active{
+    display: inherit !important;
+}
